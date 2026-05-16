@@ -1,43 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon premier site</title>
 
-    <style>
-        body {
-            background: #1e1e1e;
-            color: white;
-            font-family: Arial;
-            text-align: center;
-            margin-top: 100px;
-        }
+    <title>Mon site</title>
 
-        button {
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <h1>Bonjour !</h1>
 
-    <p>Mon premier site avec Cloudflare Pages.</p>
+    <p id="texte">
+        Mon premier vrai site.
+    </p>
 
-    <button onclick="changerTexte()">
+    <button id="bouton">
         Cliquez ici
     </button>
 
-    <script>
-        function changerTexte() {
-            document.querySelector("p").innerText =
-                "Le JavaScript fonctionne !";
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
