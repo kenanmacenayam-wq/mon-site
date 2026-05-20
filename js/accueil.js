@@ -2,7 +2,7 @@ const bouton = document.getElementById("bouton");
 
 const texte = document.getElementById("texte");
 
-etat = 0
+etat = 0;
 
 bouton.addEventListener("click", () => {
     if (etat==0){
