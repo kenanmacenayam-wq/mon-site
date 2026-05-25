@@ -1,0 +1,69 @@
+body {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: black;
+
+}
+
+canvas {
+
+    display: block;
+
+}
+
+/* HEADER */
+
+header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0px;
+
+    background-color: #222;
+
+}
+
+/* TITRE */
+
+.titre-site {
+
+    margin: 0;
+    
+}
+
+/* MENU */
+
+nav {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+/* LIENS */
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+}
+
+/* CONTENU */
+
+main {
+
+    padding: 40px;
+
+}

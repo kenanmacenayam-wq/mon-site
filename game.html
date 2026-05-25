@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
+
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mon profil</title>
+    <title>Mon jeu</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+    href="css/game.css">
+
 </head>
 
 <body>
-    <!-- En-tête -->
     <header>
         <nav>
             <a href="index.html">Accueil</a>
         </nav>
         <div class="titre-site">
-            <h1>Mon Site</h1>
+            <h1>Mon Jeu</h1>
         </div>
         
         <div id="connecte" hidden>
-            <!--<div class="titre-site">
-                <h3 id="welcome"></h3>
-            </div>-->
             <nav>
                 <a href="#" id="welcome"></a>
                 <a href="#" id="deconnection">Déconnection</a>
@@ -37,19 +35,13 @@
         </div>
     </header>
     
-    <main>
-        <h1 id="nom">Profil</h1>
-        <p id="age"></p>
-        <p>Voici le lien pour accéder aux téléchargements !</p>
-        <a href="telechargements.html">Téléchargements</a>
-    </main>
+    <canvas id="game"></canvas>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="js/main.js"></script>
-    <script src="js/profil.js"></script>
-    <!-- Pied de page -->
-    <footer>
-        <p>© 2026 Kenan Macé--Nayam</p>
-    </footer>
+    <script src="js/game.js">
+    
+    </script>
 
 </body>
 

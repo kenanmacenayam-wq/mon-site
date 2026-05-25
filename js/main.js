@@ -40,8 +40,10 @@ document.getElementById("welcome")
 });
 
 document.addEventListener("DOMContentLoaded",async () => {
-    const connecte = document.getElementById("connecte");
-    const nonConnecte = document.getElementById("non-connecte");
+    const connecteHeader = document.getElementById("connecte");
+    const nonConnecteHeader = document.getElementById("non-connecte");
+    const connecteMain = document.getElementById("connecte-body");
+    const nonConnecteMain = document.getElementById("non-connecte-body");
     const welcome = document.getElementById("welcome");
 
     const {
@@ -49,27 +51,17 @@ document.addEventListener("DOMContentLoaded",async () => {
     } = await client.auth.getUser();
 
     if (user) {
-        connecte.hidden = false;
-        nonConnecte.hidden = true;
+        connecteHeader.hidden = false; if (connecteMain){connecteMain.hidden = false;}
+        nonConnecteHeader.hidden = true; if (nonConnecteMain){nonConnecteMain.hidden = true;}
         const {
             data, error
         } = await client.from("profiles").select("*").eq("id", user.id).single();
-        
-        //console.log("USER:", user);
-        //console.log("PROFILE DATA:", data);
-        //console.log("ERROR:", error);
-
-        /*if (!data || error) {
-
-            console.log("Profil introuvable");
-
-            return;
-        }*/
-
-        welcome.innerText = data.pseudo;
+        if (welcome) {
+            welcome.innerText = data.pseudo;
+        }
     }else{
-        connecte.hidden = true;
-        nonConnecte.hidden = false;
+        connecteHeader.hidden = true; if(connecteMain){connecteMain.hidden = true;}
+        nonConnecteHeader.hidden = false; if(nonConnecteMain){nonConnecteMain.hidden = false;}
     }
 
 });

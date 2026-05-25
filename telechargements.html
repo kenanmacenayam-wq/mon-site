@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mon profil</title>
+    <title>Mon site</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- En-tête -->
+
     <header>
         <nav>
             <a href="index.html">Accueil</a>
@@ -19,11 +19,7 @@
         <div class="titre-site">
             <h1>Mon Site</h1>
         </div>
-        
         <div id="connecte" hidden>
-            <!--<div class="titre-site">
-                <h3 id="welcome"></h3>
-            </div>-->
             <nav>
                 <a href="#" id="welcome"></a>
                 <a href="#" id="deconnection">Déconnection</a>
@@ -36,21 +32,37 @@
             </nav>
         </div>
     </header>
-    
+
     <main>
-        <h1 id="nom">Profil</h1>
-        <p id="age"></p>
-        <p>Voici le lien pour accéder aux téléchargements !</p>
-        <a href="telechargements.html">Téléchargements</a>
+        <h2>Téléchargements</h2>
+        <div id="connecte-body" hidden>
+            <p>Vous trouverez ici les fichiers que vous avez uploadés.</p>
+
+            <p>Vous pouvez aussi uploader un fichier :</p>
+
+            <input type="file" id="file-input">
+
+            <button id="upload">
+                Envoyer
+            </button>
+
+            <p>Vos fichiers :</p>
+            <div id="liste-fichiers"></div>
+        </div>
+        <div id="non-connecte-body" hidden>
+            <p>Veuillez vous connecter pour accéder à votre espace de téléchargement.</p>
+
+            <a href="connexion.html">Se connecter</a>
+             ou
+            <a href="creation_compte.html">Créer un compte</a>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="js/main.js"></script>
-    <script src="js/profil.js"></script>
-    <!-- Pied de page -->
+    <script src="js/telechargements.js"></script>
     <footer>
         <p>© 2026 Kenan Macé--Nayam</p>
     </footer>
-
 </body>
 
 </html>

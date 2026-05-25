@@ -20,42 +20,41 @@ document.addEventListener("DOMContentLoaded",async () => {
     if (boutonInscription) {
 
         boutonInscription.addEventListener("click",async () => {
+            const email = document.getElementById("email").value;
+            document.getElementById("email").value = "";
+            const password = document.getElementById("password").value;
+            document.getElementById("password").value = "";
+            const pseudo = document.getElementById("pseudo").value;
+            document.getElementById("pseudo").value = "";
+            const age = parseInt(document.getElementById("age").value);
+            document.getElementById("age").value = "";
 
-            const email =
-                document.getElementById("email").value;
-
-            const password =
-                document.getElementById("password").value;
-
-            const pseudo =
-                document.getElementById("pseudo").value;
-
-            const age =
-                parseInt(
-                    document.getElementById("age").value
-                );
-
+            //Vérification des champs
+            
+            if (!email || !password || !pseudo || isNaN(age)) {
+                document.getElementById("erreur").textContent = "Veuillez remplir tous les champs correctement.";
+                return;
+            }
+            const { data : dataEmail } = await client.from("profiles").select("*").eq("email", email)
+            if (dataEmail && dataEmail.length > 0) {
+                document.getElementById("erreur").textContent = "Email déjà utilisé.";
+                return;
+            }
+            const { data : dataPseudo } = await client.from("profiles").select("*").eq("pseudo", pseudo)
+            if (dataPseudo && dataPseudo.length > 0) {
+                document.getElementById("erreur").textContent = "Pseudo déjà utilisé.";
+                return;
+            }
             /* Création du compte */
 
-            const {
-                data,
-                error
-            } = await client.auth.signUp({
-
-                email,
-                password
-
-            });
+            const {data, error} = await client.auth.signUp({email, password});
 
             if (error) {
-
-                alert(error.message);
-
+                document.getElementById("erreur").textContent = error.message;
                 return;
             }
 
             /* ID utilisateur */
-
             const user = data.user;
 
             /* Insertion profil */
@@ -65,24 +64,16 @@ document.addEventListener("DOMContentLoaded",async () => {
             } = await client
             .from("profiles")
             .insert({
-
                 id: user.id,
-
                 pseudo: pseudo,
-
                 age: age
-
             });
 
             if (profileError) {
-
                 console.log(profileError);
-
-                alert("Erreur profil");
-
+                document.getElementById("erreur").textContent = "Erreur profil";
             } else {
                 window.location.href = "index.html";
-                //alert("Compte créé !");
             }
         });
     }
@@ -106,7 +97,7 @@ document.addEventListener("DOMContentLoaded",async () => {
 
             if (error) {
 
-                alert("Erreur : " + error.message);
+                document.getElementById("erreur").textContent = "Erreur : " + error.message;
 
             } else {
 

@@ -13,3 +13,4 @@ bouton.addEventListener("click", () => {
         etat = 0;
     }
 });
+

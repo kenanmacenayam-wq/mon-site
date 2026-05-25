@@ -1,36 +1,20 @@
 
-document.addEventListener(
-    "DOMContentLoaded",
-    async () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-        const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
 
-        const id = params.get("id");
+    const id = params.get("id");
 
-        const {
-            data,
-            error
-        } = await client
+    const { data, error } = await client.from("profiles").select("*").eq("id", id).single();
 
-        .from("profiles")
+    if (!data) {
 
-        .select("*")
+        console.log("Profil introuvable");
 
-        .eq("id", id)
+        return;
+    }
 
-        .single();
+    document.getElementById("nom").innerText = `Profil de ${data.pseudo}`;
 
-        if (!data) {
-
-            console.log("Profil introuvable");
-
-            return;
-        }
-
-        document.getElementById("nom")
-        .innerText = `Profil de ${data.pseudo}`;
-
-        document.getElementById("age")
-        .innerText = `Âge : ${data.age}`;
-
+    document.getElementById("age").innerText = `Âge : ${data.age}`;
 });
