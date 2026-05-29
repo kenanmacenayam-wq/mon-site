@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mon site</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+        </nav>
+        <div class="titre-site">
+            <h1>Mon Site</h1>
+        </div>
+        
+        <div id="connecte" hidden>
+            <nav>
+                <a href="#" id="welcome"></a>
+                <a href="#" id="deconnection">Déconnection</a>
+            </nav>
+        </div>
+        <div id="non-connecte" hidden>
+            <nav>
+                <a href="creation_compte.html">Créer un compte</a>
+                <a href="connexion.html">Se connecter</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Chat</h1>
+        <div id="connecte-body" hidden>
+            <div id="messages"></div>
+            
+            <input type="text" id="message-input">
+            <button id="send">
+                Envoyer
+            </button>
+
+            <script type="module" src="js/chat.js"></script>
+        </div>
+        <div id="non-connecte-body" hidden>
+            <p>Veuillez vous connecter pour accéder au chat.</p>
+
+            <a href="connexion.html">Se connecter</a>
+             ou
+            <a href="creation_compte.html">Créer un compte</a>
+            <p>C'est gratuit, sans engagement et vous pouvez utiliser un adresse mail bidon.</p>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

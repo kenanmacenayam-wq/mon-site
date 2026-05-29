@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <!--<header>
         <nav>
             <a href="index.html">Accueil</a>
         </nav>
@@ -33,10 +33,46 @@
                 <a href="connexion.html">Se connecter</a>
             </nav>
         </div>
-    </header>
-    
-    <canvas id="game"></canvas>
+    </header>-->
+    <div id="layout">
 
+        <div id="left-bar">
+
+            <h2>Menu</h2>
+            <nav>
+                <a href="index.html">Accueil</a>
+            </nav>
+            <nav><a href="profil.html">Profil</a></nav>
+            <div id="connecte" hidden>
+                <nav>
+                    <a href="#" id="welcome"></a>
+                </nav>
+                <nav>
+                    <a href="#" id="deconnection">Déconnection</a>
+                </nav>
+            </div>
+            <div id="non-connecte" hidden>
+                <nav>
+                    <a href="creation_compte.html">Créer_un_compte</a>
+                </nav>
+                <nav>
+                    <a href="connexion.html">Se_connecter</a>
+                </nav>
+            </div>
+        </div>
+
+        <canvas id="game"></canvas>
+        <div id="right-bar">
+
+            <h2>Score</h2>
+
+            <p id="score">
+                0
+            </p>
+
+        </div>
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="js/main.js"></script>
     <script src="js/game.js">

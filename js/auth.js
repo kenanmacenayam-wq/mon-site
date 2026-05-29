@@ -66,7 +66,8 @@ document.addEventListener("DOMContentLoaded",async () => {
             .insert({
                 id: user.id,
                 pseudo: pseudo,
-                age: age
+                age: age,
+                role: "membre"
             });
 
             if (profileError) {

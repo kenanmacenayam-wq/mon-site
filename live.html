@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mon site</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+        </nav>
+        <div class="titre-site">
+            <h1>Mon Site</h1>
+        </div>
+        
+        <div id="connecte" hidden>
+            <nav>
+                <a href="#" id="welcome"></a>
+                <a href="#" id="deconnection">Déconnection</a>
+            </nav>
+        </div>
+        <div id="non-connecte" hidden>
+            <nav>
+                <a href="creation_compte.html">Créer un compte</a>
+                <a href="connexion.html">Se connecter</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>Live</h2>
+        <p>Ecoute le live !</p>
+        <button id="start">
+            Seulement les admins peuvent démarrer le live !
+        </button>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="js/live.js"></script>
+    </main>
+    <script src="js/main.js"></script>
+    <!--<script src="js/live.js"></script>-->
+    <footer>
+        <p>© 2026 Kenan Macé--Nayam</p>
+    </footer>
+</body>
+
+</html>

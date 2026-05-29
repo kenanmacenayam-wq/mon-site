@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+#messages {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+}
+
+/* TITRE */
+.titre-site {
+    margin: 0; 
+}
+
+/* MENU */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* LIENS */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* CONTENU */
+main {
+    padding: 40px;
+
+}
+/* FOOTER */
+footer {
+
+    text-align: right;
+
+    padding: 2px;
+
+    background-color: #222;
+
+}

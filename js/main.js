@@ -63,14 +63,10 @@ document.addEventListener("DOMContentLoaded",async () => {
         connecteHeader.hidden = true; if(connecteMain){connecteMain.hidden = true;}
         nonConnecteHeader.hidden = false; if(nonConnecteMain){nonConnecteMain.hidden = false;}
     }
-
 });
 
 async function verifierConnexion() {
-
-    const session =
-    await client.auth.getSession();
-
+    const session = await client.auth.getSession();
     console.log(session);
 }
 
