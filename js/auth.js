@@ -6,11 +6,9 @@
 //    SUPABASE_KEY
 //);
 
-const emailInput =
-document.getElementById("email");
+const emailInput = document.getElementById("email");
 
-const passwordInput =
-document.getElementById("password");
+const passwordInput = document.getElementById("password");
 
 document.addEventListener("DOMContentLoaded",async () => {
 
@@ -79,8 +77,7 @@ document.addEventListener("DOMContentLoaded",async () => {
         });
     }
 
-    const boutonConnexion =
-    document.getElementById("connexion");
+    const boutonConnexion = document.getElementById("connexion");
     if (boutonConnexion) {
 
         boutonConnexion.addEventListener("click",async () => {

@@ -1,4 +1,4 @@
-import {
+/*import {
     createClient
 } from
 "https://esm.sh/@supabase/supabase-js";
@@ -9,23 +9,30 @@ const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const client = supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
-);
+);*/
 const {
     data: { user }
 } = await client.auth.getUser();
-function afficherMessage(message) {
+function afficherMessage(message, num) {
     const div =
     document.createElement("div");
     div.innerHTML = `
         <strong>
-            ${message.pseudo}
+            <a href="#" id="profil-${num}">
+                ${message.pseudo}
+            </a>
         </strong>
         :
         ${message.contenu}
     `;
-    document
-    .getElementById("messages")
-    .appendChild(div);
+    document.getElementById("messages").appendChild(div);
+    document.getElementById(`profil-${num}`)
+    .addEventListener("click", (event) => {
+        event.preventDefault();
+        if (message.user_id) {
+            window.open(`profil.html?id=${message.user_id}`);
+        }
+    });
     const messagesDiv =
     document.getElementById(
         "messages"
@@ -41,7 +48,7 @@ const {
     "date_envoi", { ascending: true }
 );
 messages.forEach(
-    afficherMessage
+    (message, index) => afficherMessage(message, index)
 );
 document
 .getElementById("send")
@@ -72,7 +79,8 @@ client
     },
     payload => {
         afficherMessage(
-            payload.new
+            payload.new,
+            Date.now()
         );
     }
 )
